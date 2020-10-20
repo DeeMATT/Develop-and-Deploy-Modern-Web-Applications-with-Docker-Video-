@@ -4,12 +4,12 @@ pipeline {
         stage('clone the repo and removing the existing one')
         {
           steps {
-              sh "sudo rm -rf /home/coreopt1/project"
-              sh "cd /home/coreopt1/"
-              sh "mkdir -p /home/coreopt1/project"
-              sh "cd /home/coreopt1/project"
-              sh "git clone https://github.com/PacktPublishing/Develop-and-Deploy-Modern-Web-Applications-with-Docker-Video-.git /home/coreopt1/project"
-               
+              sh "cd /Users/mac/"
+              sh "sudo rm -rf coreopt1/project"
+              sh "cd coreopt1/"
+              sh "mkdir -p /Users/mac/coreopt1/project"
+              sh "cd /Users/mac/coreopt1/project"
+              sh "git clone https://github.com/DeeMATT/Develop-and-Deploy-Modern-Web-Applications-with-Docker-Video-.git /Users/mac/coreopt1/project"
                }
          }
          
@@ -17,28 +17,9 @@ pipeline {
          {
            steps 
            {
-              sh "sudo cp /home/coreopt1/project/www/html/index.html /var/www/html/"
+              sh "sudo cp /Users/mac/coreopt1/project/www/html/index.html /var/www/html/"
            }
-          }
-          
-           stage("Installing the webserver and starting its service")
-          {
-            steps
-            {
-              sh "sudo apt install apache2 -y"
-              sh "sudo systemctl start apache2"
-            }
-          }
-          
-          
-          stage("Restarting the apache2 service")
-          {
-            steps
-            {
-              sh "sudo systemctl restart apache2"
-            }
-          }
-               
-    }
+         }
 
+    }
 }
