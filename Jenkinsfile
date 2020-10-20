@@ -5,7 +5,7 @@ pipeline {
         {
           steps {
               sh "cd /Users/mac/"
-              sh "sudo rm -rf coreopt1/project"
+              sh "rm -rf coreopt1/project"
               sh "cd coreopt1/"
               sh "mkdir -p /Users/mac/coreopt1/project"
               sh "cd /Users/mac/coreopt1/project"
@@ -17,7 +17,7 @@ pipeline {
          {
            steps 
            {
-              sh "sudo cp /Users/mac/coreopt1/project/www/html/index.html /var/www/html/"
+              sh "cp /Users/mac/coreopt1/project/www/html/index.html /var/www/html/"
            }
          }
 
