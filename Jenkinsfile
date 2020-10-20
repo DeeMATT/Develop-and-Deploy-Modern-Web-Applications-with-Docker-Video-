@@ -6,6 +6,7 @@ pipeline {
           steps {
               sh "cd /Users/mac/"
               sh "rm -rf coreopt1/project"
+              sh "mkdir -p /Users/mac/coreopt1/"
               sh "cd coreopt1/"
               sh "mkdir -p /Users/mac/coreopt1/project"
               sh "cd /Users/mac/coreopt1/project"
